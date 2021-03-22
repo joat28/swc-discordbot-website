@@ -17,6 +17,7 @@ module.exports = {
             console.log("Connected!");
         })
         client.once("message", async (msg) => {
+            console.log(msg.guild.id);
             try {
                 const webhooks = await msg.guild.fetchWebhooks();
                 const webhook = webhooks.first();
