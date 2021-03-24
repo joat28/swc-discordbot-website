@@ -21,7 +21,9 @@ module.exports = {
         client.once("ready", () => {
             console.log("Connected!");
             const swcGuild = client.guilds.cache.get("760027403933712384");
-            const channels = swcGuild.channels.cache.filter((channel) => {
+
+            //=================== IN CASE OF MANY CHANNELS ======================
+           /* const channels = swcGuild.channels.cache.filter((channel) => {
                 return channel.type === "text";
             });
             // console.log(channels);
@@ -52,6 +54,37 @@ module.exports = {
                     },
                 })
             );
+            */
+
+            // ==================   In case of Channel only ====================
+            const ancChannel = swcGuild.channels.cache.get("823922009041535007");
+            ancChannel.send({
+							embed: {
+								color: 3447003,
+								author: {
+									name: "SWC Announcements",
+									icon_url:
+										"https://cdn.discordapp.com/attachments/761194181083004928/822708112615276554/IMG-20210318-WA0024.jpg",
+								},
+								title: "SWC Announcement",
+								url: "https://www.facebook.com/swciitg/",
+								description: `This is an important announcement from team`,
+								fields: [
+									{
+										name: "Topic",
+										value: `${anc}`,
+									},
+								],
+								timestamp: new Date(),
+								footer: {
+									icon_url:
+										"https://cdn.discordapp.com/attachments/761194181083004928/822708112615276554/IMG-20210318-WA0024.jpg",
+									text: "© SWC IITG",
+								},
+							},
+						}); 
+
+
             // this.resetBot();
         });
 	},
