@@ -16,11 +16,11 @@ app.use(express.static(__dirname + '/public'));
 
 app.set("view engine", "ejs");
 
-app.get("/", (req, res) => {
+app.get("/swcanc", (req, res) => {
     res.render('home');
 });
 
-app.post("/", (req, res) => {
+app.post("/swcanc", (req, res) => {
     const announcement = req.body.mod_anc;
     try {
         anc.execute(announcement);
@@ -39,11 +39,11 @@ app.post("/", (req, res) => {
         })
     }
 });
-app.get('/success', (req, res) => {
+app.get('/swcanc/success', (req, res) => {
     res.render('success');
 })
-app.get("/rs", (req, res) => {
-    res.redirect("/");
+app.get("/swcanc/rs", (req, res) => {
+    res.redirect("/swcanc");
     process.exit(1);
    
 });
