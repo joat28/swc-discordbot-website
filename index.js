@@ -27,9 +27,9 @@ app.post("/swcanc", (req, res) => {
         // res.json({
         //     info: "Now type get anc to get the announcement in all channels with webhooks",
         //     message: "Success",
-        //     anc: "/rs"
+        //     anc: "swcanc/rs"
         // });
-        res.redirect("/success");
+        res.redirect("swcanc/success");
         
     } catch (error) {
         console.log(error);
