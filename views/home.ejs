@@ -8,12 +8,21 @@
     <title>SWC Discord Bot</title>
 </head>
 <body>
-       <h2>SWC Discord Bot</h1>
-       <h4>Type in the announcement</h3> 
-        <form action="/swcanc" method="POST">
-        <label for="mod_anc"></label>
-        <textarea type="text" id="mod_anc" name="mod_anc" value="Dont leave this blank" rows="12" cols="80"></textarea><br><br>
-        <button type="submit" value="Submit" method="POST">Submit</button>
-</form>
+
+    
+    <h2>SWC Discord Bot</h2>
+    <div class="container">
+       <h4>Type in the announcement</h4> 
+        <a href="/swcanc/logout" > <button>Logout?</button></a> 
+        <form action="/swcanc/send" method="POST">
+            <label for="mod_anc"></label>
+            <textarea type="text" id="mod_anc" name="mod_anc" value="Dont leave this blank" rows="12" cols="80" required></textarea><br><br>
+            <input type="radio" name="type" value="anc-channel-only" > <span class="radioButtons" required> Announcement channel only</span></input><br>
+            <input type="radio" name="type" value="all-text-channels" > <span class="radioButtons" required>All text channels</span></input><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+       
+
 </body>
 </html>
